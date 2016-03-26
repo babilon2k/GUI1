@@ -14,7 +14,7 @@ public class Account {
 
 	public void deposit(double amount) {
 		if (amount < 0) {
-			System.out.println("Wprowadzono bÅ‚ednÄ… kwotÄ™.");
+			System.out.println("Wprowadzono błędną kwotę");
 		} else {
 			balance += amount;
 		}
@@ -22,16 +22,16 @@ public class Account {
 
 	public void withdraw(double amount) {
 		if (amount < 0)
-			System.out.println("Wprowadzono bÅ‚ednÄ… kwotÄ™.");
+			System.out.println("Wprowadzono błędną kwotę");
 		else if (amount > balance)
-			System.out.println("Nie wystarczajÄ…ca iloÅ›Ä‡ Å›rodkÃ³w na koncie.");
+			System.out.println("Nie wystarczająca ilość środków na koncie");
 		else
 			balance -= amount;
 	}
 
 	public void transfer(Account acc, double amount) {
 		if (balance < amount) {
-			System.out.println("Nie wystarczajÄ…ca iloÅ›Ä‡ Å›rodkÃ³w na koncie.");
+			System.out.println("Nie wystarczająca ilość środków na koncie");
 		} else {
 			this.withdraw(amount);
 			acc.deposit(amount);
@@ -54,22 +54,5 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public String toString() {
-		return "Stan konta: " + getBalance();
-	}
-	
-	public static void main(String[] args) {
-
-/*		Account jan = new Account(500);
-		Account ala = new Account(1500);
-		jan.getBalance();
-		jan.setBalance(500);
-		
-		
-		 
-		jan.transfer(ala, 3000);
-		System.out.println(jan);
-		System.out.println(ala);*/
-	}
 
 }
